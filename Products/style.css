@@ -1,0 +1,33 @@
+html {
+    background: #333333;
+} 
+.Title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+}
+.spacer {
+    height: 160px;
+    background: #ff9d73;
+
+}
+.mainimage {
+    border-radius: 9999px;
+    height: 280px;
+}
+.space {
+    height: 40px;
+}
+div {
+    background: #333333;
+}
+.card:hover {
+    transition-duration: .5s;
+    background-color: aqua;
+    color: aqua;
+    transform: scale(1.1); ; 
+}
+.space2 {
+    height: 20px;
+}
