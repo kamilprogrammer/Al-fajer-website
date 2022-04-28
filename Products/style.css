@@ -19,9 +19,6 @@ html {
 .space {
     height: 40px;
 }
-div {
-    background: #333333;
-}
 .card:hover {
     transition-duration: .5s;
     background-color: aqua;
@@ -30,4 +27,7 @@ div {
 }
 .space2 {
     height: 20px;
+}
+.header {
+    height: 800px;
 }
