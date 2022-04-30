@@ -5,107 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: whitesmoke;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        #mother {
-            font-size: 20px;
-            width: 100%;
-
-        }
-        main {
-            float: left;
-            border: 1px solid rgb(82, 82, 82);
-            padding: 5px;
-            
-        }
-        input {
-            padding: 1px;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 20px ;
-            width: 250px;
-            height: 30px;
-            border-radius: 999px;
-        }
-        aside {
-            margin-right: 10px;
-            text-align: center;
-            width: 300px;
-            float: right;
-            border : 1px solid black;
-            padding: 10px;
-            font-size: 20px;
-            background: silver;
-            color: white;
-        }
-        #tbl {
-            width: 890px;
-            font-size: 20px;
-
-
-        }
-        #tbl {
-            background-color: silver;
-            color: black;
-            font-size: 20px;
-            padding: 10px;
-
-        }
-        #logo {
-            width: 300px;
-            border-radius: 9999px;
-        }
-        #add {
-            background-color: aqua;
-            border: 0.5px solid green;
-            width: 190px;
-            height: 40px;
-            margin-top: 10px;
-            border-radius: 9999px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 500;
-        }
-        #del {
-            background-color: red;
-            border: 0.5px solid green;
-            width: 190px;
-            height: 40px;
-            margin-top: 10px;
-            border-radius: 9999px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 500;
-        }
-    </style>
     <title>مركز الادارة</title>
 </head>
 <body dir="rtl">
     <div id="mother">
         <form action="">
         <aside>
-            <div id="div">
+            <div class="container">
                 <img id="logo" src="/theme/images/img-01.png" alt="LOGO">
                 <h3>لوحة الادارة</h3>
-                <label for="">اسم الطالب</label><br>
-                <input type="text" name="name"><br>
-                <label for="">رقم هاتف الأب</label><br>
-                <input type="text" id="num"><br>
-                <label for="">رقم هاتف الأم</label><br>
-                <input type="text" id="num2"><br>
-                <label for="">تاريخ الولادة</label><br>
-                <input type="date"><br>
-                <label for="">العمر</label><br>
-                <input type="number"><br>
-                <button id="add" name="add">اضافة الطالب</button>
-                <button id="del" name="del">حذف الطالب
-                    <a href="/theme/index.html"></a>
-                </button>
+                <label for="name">اسم الطالب</label><br>
+                <input type="text" name="name" id="fname"><br>
+                <label for="num1">رقم هاتف الأب</label><br>
+                <input type="text" id="lname"><br>
+                <label for="num2">رقم هاتف الأم</label><br>
+                <input type="text" id="email"><br>
+                <label for="date">تاريخ الولادة</label><br>
+                <input type="date" id="age"><br>
+                <label for="num3">العمر</label><br>
+                <input type="number" id="num3"><br>
+                <input type="button" name="button" id="btn" value="اضافة طالب" onclick="AddRow()">
+                <input id="del" name="del" type="button">
             </div>
         </aside>
         <main>
-            <table id="tbl">
+            <table id="show">
                 <tr>
                     <th>اسم الطالب</th>
                     <th>رقم هاتف الأب</th>
@@ -116,6 +40,40 @@
         </main>
     </form>
     </div>
-    
+    <script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("fname").value;
+			list2[x] = document.getElementById("lname").value;
+			list3[x] = document.getElementById("email").value;
+			list4[x] = document.getElementById("age").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+
+			n++;
+			x++;
+		}
+
+	</script>  
 </body>
 </html>
